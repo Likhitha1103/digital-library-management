@@ -1,0 +1,19 @@
+{
+  "name": "digital-library-management",
+  "version": "1.0.0",
+  "description": "Full-stack Digital Library Management System with REST API backend and React frontend",
+  "main": "server/index.js",
+  "scripts": {
+    "start:server": "node server/index.js",
+    "start:client": "npm --prefix client run dev",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "build:client": "npm --prefix client run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
