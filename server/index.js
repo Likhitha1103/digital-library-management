@@ -356,6 +356,17 @@ app.put('/api/admin/users/:id/role', (req, res) => {
   return res.json({ success: true, user });
 });
 
+// -------------------------------------------------------------
+// SERVE FRONTEND (production build)
+// -------------------------------------------------------------
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Digital Library REST Server running on http://localhost:${PORT}`);
 });
